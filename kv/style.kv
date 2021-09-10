@@ -1,4 +1,5 @@
 #:kivy 2.0.0
+# Classe AppBar usada em todas as janelas
 <AppBar@BoxLayout>:
     canvas:
         Color:
@@ -12,4 +13,11 @@
     #orientation: 'horizontal'
     pos_hint: {'top':1}
     size_hint: (1, None)    
-    padding: 0,'8dp',0,0
+    padding: '16dp','8dp',0,'8dp'
+
+<Icon@Button>:
+    size_hint_x: None
+    width: self.height
+    border: 0,0,0,0
+
+    
