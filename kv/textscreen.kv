@@ -1,0 +1,37 @@
+#:kivy 2.0.0
+<TextScreen>:
+
+    BoxLayout:
+        orientation: 'horizontal' 
+        size_hint: (1,1)
+        canvas:
+            Color:
+                rgba: .4,.4,.4,1
+            Rectangle:
+                size: self.size
+                pos:self.pos  
+        Label:
+            text: "Aqui será texto! "       
+
+    BoxLayout:
+        orientation:'horizontal'
+        pos_hint:{'top':1}
+        size_hint: (1, None)
+        height: '56dp'
+        padding: 0,'8sp',0,0    
+        
+        Button:
+                
+            text: "<- TextScreen"
+            bold: True
+            font_size: '20dp'
+            haling: 'left'
+            text_size: self.size
+            valing: 'center'
+            padding_x: '8dp'
+            
+            on_release:
+                app.change_screen("home_screen")
+                #app.manager.transition.direction = 'left'
+                root.manager.transition.direction = 'right'
+        

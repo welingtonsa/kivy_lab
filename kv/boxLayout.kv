@@ -1,0 +1,73 @@
+#:kivy 2.0.0
+# Alterar nome da classe para rodar
+# o programa. 
+ 
+# Classe Dinamica (Temaplate).
+<MyBigButt@Button>:
+    #text_size: self.size
+    font_size:'25sp'
+    markup: False
+
+# 1-ROOT
+<MyBoxes>:
+    orientation:'vertical'
+    custom: 'ROOTs '
+    canvas:
+        Color:
+            rgba: 0, 0.3, 0.9, .5
+        #Rectangle: Usado para adionar uma estrutura.
+        BorderImage:
+            source:'img/shogi.jpg'
+            size: self.size # self. refere-se ao widget atual
+            pos: self.pos 
+    spacing: 16 # Espa~p entre filhos , em pixels.  ==
+    padding: 16 # Preenchimento (Padding) Entre BoxLayout e filhos  ||
+    # 1-1    
+    BoxLayout:
+        orientation:'vertical' # Orientação do layout vertical/horizontal.
+        size_hint: (1,1) # 
+        pos_hint: {'center_x':.5}
+        canvas:
+            Color:
+                rgba: 0, 0.5, 0.9, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            text: "1-1 BoxLayout!"
+        Label:
+            text: app.name
+          
+    # 1-2 
+    BoxLayout:
+        orientation:'vertical'
+        size_hint: (1,1) 
+        canvas:
+            Color:
+                rgba: 0,0.5,0.9,1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            text: "1-2 BoxLayout!"
+    
+    # 1-3 # Botão simples e suas prorpriedades
+    Button:
+        text:"Button!"
+        text_size: self.size
+        font_size:'25sp'
+        markup: True
+        pos_hint: {'x': .1, 'y': 0}
+        size_hint:(None, None)
+        width: 100
+        height: 75
+    
+    MyBigButt:
+        text: 'Button Class! %s' % self.state
+    MyBigButt:
+        text: root.custom # Refere-se a custom na raiz
+    MyBigButt:
+        id: btn1
+    MyBigButt:
+        text: 'Estado do outro botão %s' % btn1.state
+        

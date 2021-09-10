@@ -1,0 +1,13 @@
+#:kivy 2.0.0
+#:include kv/style.kv
+<TextViewSpansScreen>:
+    orientation: 'vertical'
+    AppBar:
+        Button:
+            text:
+                "TextView Spans"
+            on_release:
+                app.change_screen("home_screen")
+                #root.current = 'home_screen'
+                root.manager.transition.direction = 'right'
+

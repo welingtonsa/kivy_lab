@@ -1,0 +1,20 @@
+#:kivy 2.0.0
+#:include kv/homescreen.kv
+#:include kv/textscreen.kv
+#:include kv/textviewscreen.kv
+
+GridLayout:
+    cols: 1
+    ScreenManager:
+        id: screen_manager
+        HomeScreen:
+            name: "home_screen"
+            id: home_screen
+
+        TextScreen:
+            name:"text_screen"
+            id: text_screen
+
+        TextViewSpansScreen:
+            name: "textViewspans_screen"
+            id: textViewspans_screen 
